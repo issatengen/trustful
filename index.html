@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trustful Charity | Charity NGO</title>
+    <!-- Bootstrap 5.3 CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-..." crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Custom styles */
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color) !important;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1500993855538-c6a99f437aa7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0;
+            text-align: center;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .btn-danger {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        
+        .service-card {
+            transition: transform 0.3s;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .social-icons a {
+            color: rgb(79, 34, 184);
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.2rem;
+            z-index: 999;
+        }
+        
+        .back-to-top:hover {
+            color: white;
+            background-color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar">
+    <!-- Back to top button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Trustful Charity</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-danger" href="#donate">Donate</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4">Making a Difference Together</h1>
+            <p class="lead mb-5">Join us in our mission to create positive change in communities across Cameroon</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#donate" class="btn btn-danger btn-lg px-4">Donate Now</a>
+                <a href="#about" class="btn btn-outline-light btn-lg px-4">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <h2 class="display-4 fw-bold text-primary">15+</h2>
+                    <p class="text-muted">Projects Completed</p>
+                </div>
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <h2 class="display-4 fw-bold text-primary">2K+</h2>
+                    <p class="text-muted">Lives Impacted</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <h2 class="display-4 fw-bold text-primary">50+</h2>
+                    <p class="text-muted">Active Volunteers</p>
+                </div>
+                <div class="col-md-3 col-6">
+                    <h2 class="display-4 fw-bold text-primary">7</h2>
+                    <p class="text-muted">Years of Service</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <h2 class="text-center section-title">Our Services</h2>
+            <p class="text-center mb-5 lead">We provide comprehensive support to communities in need through our various programs</p>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card shadow">
+                        <div class="card-body text-center">
+                            <div class="service-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h3 class="card-title">Food Assistance</h3>
+                            <p class="card-text">Our food security programs provide nutritious meals to underprivileged families, school feeding initiatives, and emergency food relief during crises.</p>
+                            <a href="#" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card shadow">
+                        <div class="card-body text-center">
+                            <div class="service-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h3 class="card-title">Education Support</h3>
+                            <p class="card-text">We build schools, provide scholarships, distribute learning materials, and train teachers to improve access to quality education.</p>
+                            <a href="#" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card shadow">
+                        <div class="card-body text-center">
+                            <div class="service-icon">
+                                <i class="fas fa-medkit"></i>
+                            </div>
+                            <h3 class="card-title">Healthcare Initiatives</h3>
+                            <p class="card-text">Mobile clinics, health education, vaccination campaigns, and maternal health programs serving remote communities.</p>
+                            <a href="#" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card shadow">
+                        <div class="card-body text-center">
+                            <div class="service-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h3 class="card-title">Housing & Shelter</h3>
+                            <p class="card-text">Building and renovating homes for homeless families, disaster victims, and vulnerable populations.</p>
+                            <a href="#" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card shadow">
+                        <div class="card-body text-center">
+                            <div class="service-icon">
+                                <i class="fas fa-hand-holding-water"></i>
+                            </div>
+                            <h3 class="card-title">Clean Water Projects</h3>
+                            <p class="card-text">Installing wells, water purification systems, and sanitation facilities in communities without access to clean water.</p>
+                            <a href="#" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card shadow">
+                        <div class="card-body text-center">
+                            <div class="service-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3 class="card-title">Economic Empowerment</h3>
+                            <p class="card-text">Vocational training, microfinance programs, and small business support to create sustainable livelihoods.</p>
+                            <a href="#" class="btn btn-outline-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Carousel -->
+    <section class="py-0">
+        <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="d-block w-100" alt="Education Project">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Education for All</h3>
+                        <p>Our school building project in rural Cameroon has provided education to over 500 children who previously had no access to schooling.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img style="width: 100%; height: 30rem;" src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nphCg104iM4KwgJDPJt-2KBj3qJ8Co8flkwwJSteEzOkZB9bTzqj543mpcqbSYtX9YV2lwU6VtZXD5Pve0WUS0K2dIY82Xdy_hN842VnyEqimT_Q5wgIlUb4gYlw_Esd3bLlV1Y=s680-w680-h510-rw" alt="Water Project">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Clean Water Initiative</h3>
+                        <p>We've installed 15 wells in villages across Cameroon, providing clean drinking water to thousands of people.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="d-block w-100" alt="Medical Camp">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h3>Mobile Medical Camps</h3>
+                        <p>Our medical teams have treated over 3,000 patients in remote areas through our mobile clinic program.</p>
+                        <a href="#" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center section-title">Our Story</h2>
+            <p class="text-center mb-5 lead">From humble beginnings to nationwide impact</p>
+            
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipPUXKMmEJTU_DGmHeowTAwkBaqIfjNa49vhKrnx=s680-w680-h510-rw">
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="mb-4">Our Journey</h3>
+                    <p>Trustful Charity was founded in 2008 by a group of passionate Cameroonians who witnessed the struggles of vulnerable communities in their country. What began as a small initiative to help street children in Yaoundé has grown into a nationwide movement for positive change.</p>
+                    <p>Our first project provided meals and basic education to 15 street children in the capital. Today, we operate in 8 regions of Cameroon, running over 20 different programs that serve thousands of beneficiaries annually.</p>
+                    <p>One of our earliest beneficiaries was a young girl named Amina. Orphaned at age 10, she was struggling to survive on the streets. Through our intervention, we provided her with shelter, education, and eventually helped her start a small business. Today, Amina is a successful entrepreneur who employs 5 other vulnerable women in her community.</p>
+                    <p>Stories like Amina's fuel our passion and remind us why we do what we do. Every life transformed is a testament to the power of compassion and collective action.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline -->
+            <h3 class="text-center mb-5">Our Milestones</h3>
+            <div class="timeline">
+                <div class="timeline-container left">
+                    <div class="timeline-content">
+                        <h4>2008</h4>
+                        <p>Trustful Charity is founded by a group of 5 volunteers in Yaoundé. Our first project serves 15 street children.</p>
+                    </div>
+                </div>
+                <div class="timeline-container right">
+                    <div class="timeline-content">
+                        <h4>2010</h4>
+                        <p>We expand to Douala, launching our first vocational training center for disadvantaged youth.</p>
+                    </div>
+                </div>
+                <div class="timeline-container left">
+                    <div class="timeline-content">
+                        <h4>2012</h4>
+                        <p>Our first clean water project is completed, bringing clean water to a village of 500 people.</p>
+                    </div>
+                </div>
+                <div class="timeline-container right">
+                    <div class="timeline-content">
+                        <h4>2015</h4>
+                        <p>We establish our mobile medical clinic program, reaching remote communities with healthcare services.</p>
+                    </div>
+                </div>
+                <div class="timeline-container left">
+                    <div class="timeline-content">
+                        <h4>2018</h4>
+                        <p>Trustful Charity celebrates 10 years with projects in 5 regions and over 100 volunteers.</p>
+                    </div>
+                </div>
+                <div class="timeline-container right">
+                    <div class="timeline-content">
+                        <h4>2023</h4>
+                        <p>Our annual impact grows to serve over 5,000 direct beneficiaries across Cameroon.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mission and Vision -->
+            <div class="row mt-5">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="card h-100 shadow">
+                        <div class="card-body text-center">
+                            <div class="text-center mb-4">
+                                <i class="fas fa-bullseye fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title">Our Mission</h3>
+                            <p class="card-text">To empower vulnerable communities in Cameroon through sustainable development programs that address immediate needs while creating long-term solutions for education, healthcare, and economic independence.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card h-100 shadow">
+                        <div class="card-body text-center">
+                            <div class="text-center mb-4">
+                                <i class="fas fa-eye fa-3x text-primary"></i>
+                            </div>
+                            <h3 class="card-title">Our Vision</h3>
+                            <p class="card-text">We envision a Cameroon where every individual has access to basic necessities, quality education, and opportunities to thrive, regardless of their socioeconomic background.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Values -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="text-center mb-5">Our Core Values</h3>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body text-center">
+                            <div class="text-center mb-4">
+                                <i class="fas fa-heart fa-3x text-danger"></i>
+                            </div>
+                            <h4 class="card-title">Compassion</h4>
+                            <p class="card-text">We approach every person and situation with empathy, understanding, and a genuine desire to help.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body text-center">
+                            <div class="text-center mb-4">
+                                <i class="fas fa-shield-alt fa-3x text-primary"></i>
+                            </div>
+                            <h4 class="card-title">Integrity</h4>
+                            <p class="card-text">We maintain the highest ethical standards in all our operations and are transparent in our actions.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body text-center">
+                            <div class="text-center mb-4">
+                                <i class="fas fa-users fa-3x text-success"></i>
+                            </div>
+                            <h4 class="card-title">Community</h4>
+                            <p class="card-text">We believe in working with communities, not just for them, to create sustainable solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Team Section -->
+            <div class="mt-5">
+                <h3 class="text-center mb-5">Meet Our Leadership</h3>
+                <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <!-- Team Member 1 -->
+                        <div class="carousel-item active">
+                            <div class="d-flex justify-content-center">
+                                <div class="card team-card shadow col-md-4" style="width: 22rem;">
+                                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" class="card-img-top team-img" alt="John Mbarga">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">John Mbarga</h5>
+                                        <p class="text-muted">Founder & Executive Director</p>
+                                        <div class="mt-3">
+                                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card team-card shadow ms-4 col-md-4" style="width: 22rem;">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" class="card-img-top team-img" alt="Sarah Nkeng">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Sarah Nkeng</h5>
+                                        <p class="text-muted">Program Director</p>
+                                        <div class="mt-3">
+                                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Team Member 2 -->
+                        <div class="carousel-item">
+                            <div class="d-flex justify-content-center">
+                                <div class="card team-card shadow ms-4" style="width: 22rem;">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" class="card-img-top team-img" alt="Sarah Nkeng">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Sarah Nkeng</h5>
+                                        <p class="text-muted">Program Director</p>
+                                        <div class="mt-3">
+                                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card team-card shadow ms-4" style="width: 22rem;">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" class="card-img-top team-img" alt="David Fon">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">David Fon</h5>
+                                        <p class="text-muted">Finance Manager</p>
+                                        <div class="mt-3">
+                                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Team Member 3 -->
+                        <div class="carousel-item">
+                            <div class="d-flex justify-content-center">
+                                <div class="card team-card shadow" style="width: 22rem;">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" class="card-img-top team-img" alt="David Fon">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">David Fon</h5>
+                                        <p class="text-muted">Finance Manager</p>
+                                        <div class="mt-3">
+                                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card team-card shadow ms-4" style="width: 22rem;">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" class="card-img-top team-img" alt="Sarah Nkeng">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Sarah Nkeng</h5>
+                                        <p class="text-muted">Program Director</p>
+                                        <div class="mt-3">
+                                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carousel Controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#teamCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#teamCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center section-title">Success Stories</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Testimonial" class="testimonial-img">
+                            <div>
+                                <h5 class="mb-0">Amina Bello</h5>
+                                <p class="text-muted mb-0">Entrepreneur</p>
+                            </div>
+                        </div>
+                        <p>"I was living on the streets when Trustful Charity found me. They gave me shelter, education, and later helped me start my small business. Today, I employ 5 other women and can support my family. This organization changed my life."</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Testimonial" class="testimonial-img">
+                            <div>
+                                <h5 class="mb-0">Thomas Njoh</h5>
+                                <p class="text-muted mb-0">Farmer</p>
+                            </div>
+                        </div>
+                        <p>"When drought destroyed our crops, Trustful Charity provided us with seeds, training, and irrigation systems. Now our village has food security and surplus to sell. Their sustainable approach makes all the difference."</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Testimonial" class="testimonial-img">
+                            <div>
+                                <h5 class="mb-0">Dr. Marie Ndi</h5>
+                                <p class="text-muted mb-0">Medical Volunteer</p>
+                            </div>
+                        </div>
+                        <p>"Volunteering with Trustful Charity has been incredibly rewarding. Their well-organized medical camps reach remote areas where healthcare is inaccessible. The impact we've made together keeps me coming back year after year."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donate Section -->
+    <section id="donate" class="py-5 bg-danger text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <h2 class="display-5 fw-bold">Your Support Changes Lives</h2>
+                    <p class="lead">Every donation, no matter the size, helps us continue our vital work in communities across Cameroon. Join us in making a difference today.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="#" class="btn btn-light btn-lg px-4">Donate Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center section-title">Contact Us</h2>
+            <div class="row shadow-sm">
+                <div class="col-lg-12 mb-4">
+                    <p class="text-center lead">We would love to hear from you! Whether you have questions, feedback, or want to get involved, feel free to reach out.</p>
+                </div>
+                <div class="col-lg-6 mb-5 mb-lg-0 bg-light rounded">
+                    <h3 class="mb-4 text-primary-emphasis">Get in Touch</h3>
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary mb-2">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-lg-6 shadow-sm">
+                    <h3 class="mb-4 text-primary-emphasis">Contact Information</h3>
+                    <div class="contact-info mb-4">
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> Rond-point Express Biyemassi, Yaoundé & Ancienne route Bonabéri, Douala</p>
+                        <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +237 678 671 841</p>
+                        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> trustfulCharity2024@gmail.com</p>
+                    </div>
+                    
+                    <div class="mb-5">
+                        <h4 class="mb-3">Office Hours</h4>
+                        <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                        <p>Saturday: 9:00 AM - 1:00 PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="mb-3">Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <iframe class="rounded-3 shadow" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3980.882991427399!2d11.4836704!3d3.8352831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42554270735cdc95%3A0xe557fbce07f8d4c7!2sTrustful%20Charity%20Association!5e0!3m2!1sfr!2scm!4v1747301506769!5m2!1sfr!2scm" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h3 class="text-white mb-4">Trustful Charity</h3>
+                    <p>Committed to creating positive change in communities across Cameroon through sustainable development programs and compassionate service.</p>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h4 class="text-white mb-4">Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#home" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#services" class="text-white text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="#about" class="text-white text-decoration-none">About</a></li>
+                        <li class="mb-2"><a href="#contact" class="text-white text-decoration-none">Contact</a></li>
+                        <li class="mb-2"><a href="#donate" class="text-white text-decoration-none">Donate</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h4 class="text-white mb-4">Our Services</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">Food Assistance</li>
+                        <li class="mb-2">Education Support</li>
+                        <li class="mb-2">Healthcare Initiatives</li>
+                        <li class="mb-2">Shelter Programs</li>
+                        <li class="mb-2">Clean Water Projects</li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-4">Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> Rond-point Express Biyemassi, Yaoundé</p>
+                    <p><i class="fas fa-phone me-2"></i> +237 678 671 841</p>
+                    <p><i class="fas fa-envelope me-2"></i> trustfulCharity2024@gmail.com</p>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4 bg-light">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2024 Trustful Charity. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="social-icons ">
+                        <a href="#"><i class="fab fa-facebook-f text-white"></i></a>
+                        <a href="#"><i class="fab fa-twitter text-white"></i></a>
+                        <a href="#"><i class="fab fa-instagram text-white"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in text-white"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+        
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Here you would typically send the form data to a server
+                // For demonstration, we'll just show an alert
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+        }
+        
+        // Change navbar style on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('navbar-scrolled');
+            } else {
+                navbar.classList.remove('navbar-scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
